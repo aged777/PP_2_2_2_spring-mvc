@@ -6,9 +6,21 @@
     <title>Cars</title>
 </head>
 <body>
-<div th:each="car : ${cars}">
-        <a th:href = "@{/cars/{id}(id=${car.getId()})}" th:text="${car.getModel()} + ${' '} + ${car.getColor()} + ${' '} + ${car.getAge()}">car</a>
-        <b></b>
+<h2>Car List</h2>
+<br/><br/>
+<div>
+    <table border="1">
+        <tr>
+            <th>Model</th>
+            <th>Color</th>
+            <th>Age</th>
+        </tr>
+        <tr th:each ="car : ${cars}">
+            <td th:utext="${car.getModel()}">...</td>
+            <td th:utext="${car.getColor()}">...</td>
+            <td th:utext="${car.getAge()}">...</td>
+        </tr>
+    </table>
 </div>
 </body>
 </html>
