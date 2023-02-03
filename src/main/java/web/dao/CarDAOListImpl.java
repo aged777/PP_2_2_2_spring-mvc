@@ -22,8 +22,10 @@ public class CarDAOListImpl implements CarDAO {
     }
 
     public List<Car> getCars(Integer count){
+
+        if(count >= 5 || count < 0) return  cars;
+
         ArrayList<Car> someCars = new ArrayList<>();
-        if(count >= 5) return  cars;
         for(int i = 0; i < count; i++) {
             someCars.add(cars.get(i));
         }
